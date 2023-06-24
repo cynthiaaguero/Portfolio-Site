@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import '../pages/style.css';
+import gameOfLifeDemo from '../Assets/Game_of_Life_Demo.gif';
 
 // Project Card component
 function ProjectCard(props) {
@@ -14,7 +15,7 @@ function ProjectCard(props) {
       <Card.Img variant="top" src={props.imgPath} alt="card-img" />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
+        <Card.Text style={{ textAlign: "text-align: left" }}>
           {props.description}
         </Card.Text>
         <Button className="viewbtn" variant="primary" href={props.ghLink} target="_blank">
@@ -47,15 +48,15 @@ function ProjectList() {
           <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
             <Col md={4} className="project-card">
               <ProjectCard
-                // imgPath={useradminpanel}
+                imgPath={gameOfLifeDemo}                
                 isBlog={false}
-                title="N/A"
-                description="N/A"
-                ghLink="https://rahul-dashboard-pannel.netlify.app"
+                title="Conway's Game of Life"
+                description="A zero player game where one can observe the evolution of cells based on their current state and surrounding neighbors. "
+                ghLink="https://github.com/cynthiaaguero/CS112/tree/master/GameOfLife"
               />
             </Col>
 
-            <Col md={4} className="project-card">
+            {/* <Col md={4} className="project-card">
               <ProjectCard
                 // imgPath={olximage}
                 isBlog={false}
@@ -104,7 +105,7 @@ function ProjectList() {
                 ghLink="https://todolist-rahul81.netlify.app/"
               />
             </Col>
-
+ */}
           </Row>
         </Container>
       </Container>
